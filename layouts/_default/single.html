@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="col-lg-8 mx-auto p-3 py-md-5">
+    <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <span class="fs-4">AFPI-KT PHC Leadership Fellowship</span>
+      </a>
+    </header>
+  
+    <main>
+    <h1>{{ .Page.Title }}</h1>
+    {{ if .Params.degree }}<p class="h5 text-muted">{{ .Params.degree }}</p>{{ end }}
+    {{ if .Params.designation }}<p class="h5 text-muted">{{ .Params.designation }}</p>{{ end }}
+    {{ if .Params.image }}<div class="float-end"><img src="/images/{{ .Params.image }}" height="200" width="200" /></div>{{ end }}
+    {{ .Content }}
+    <div class="row g-5">
+      {{ if .Params.email }}
+        <a href="mailto:{{ .Params.email }}" class="col-1">
+          <i role="img" aria-label="Email" style="font-size: 2rem;" class="bi-envelope"></i>
+        </a>
+      {{ end }}
+      {{ if .Params.site }}
+        <a href="{{ .Params.site }}" class="col-1">
+          <i role="img" aria-label="Site" style="font-size: 2rem;" class="bi-link"></i>
+        </a>
+      {{ end }}
+    </div>
+    </main>
+    <footer class="pt-5 my-5 text-muted border-top">
+    Fellowship Web Team &middot; &copy; 2022
+    </footer>
+</div>
+{{ end }}

@@ -1,0 +1,85 @@
+{{ define "main" }}
+
+<div class="col-lg-8 mx-auto p-3 py-md-5">
+    <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <span class="fs-4">AFPI-KT PHC Leadership Fellowship</span>
+      </a>
+    </header>
+  
+    <main>
+      <h1>AFPI &ndash; Karuna Trust Primary Health Care Leadership Fellowship</h1>
+      <p class="fs-5 col-md-8">We know that high quality primary health care is essential to the well-being of the individual and community. The AFPI-Karuna Trust Primary Care Leadership Fellowship was created in 2019 to improve primary health care in rural and urban areas of India. Our vision is to strengthen the training of primary care physicians to realize their full potential as community leaders in addressing the social determinants of health as well as promotive, preventive, curative, and rehabilitative care. </p>
+      
+      <div class="mb-5">
+        <a href="{{ "/about/" | relURL }}" class="btn btn-primary btn-lg px-4">About</a>
+      </div>
+
+      <hr class="col-3 col-md-2 mb-5">
+
+      <h2 id="alumni">Fellows</h2>
+      <div class="row g-5">
+            {{ range (where .Site.Pages "Section" "fellow") }}
+                {{ range .Pages }}
+                    <div class="col-md-3">
+                        <img class="rounded-circle bg-success bg-gradient" width="140" height="140" 
+                          src="/images/{{ .Params.image }}" />
+                        <h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+                    </div>
+                {{ end }}
+            {{ end }}
+      </div>
+
+      <hr class="col-3 col-md-2 mb-5">
+
+      <h2 id="alumni">Alumni</h2>
+      <div class="row g-5">
+            {{ range (where .Site.Pages "Section" "alumni") }}
+                {{ range .Pages }}
+                    <div class="col-md-3">
+                        <img class="rounded-circle" width="140" height="140" 
+                          src="/images/{{ .Params.image }}" />
+                        <h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+                    </div>
+                {{ end }}
+            {{ end }}
+      </div>
+
+      <hr class="col-3 col-md-2 mb-5">
+
+      <h2 id="faculty">Faculty</h2>
+      <div class="row g-5">
+            {{ range (where .Site.Pages "Section" "faculty") }}
+                {{ range .Pages }}
+                    <div class="col-md-3">
+                        <img class="rounded-circle" width="140" height="140" 
+                          src="/images/{{ .Params.image }}" />
+                        <h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+                    </div>
+                {{ end }}
+            {{ end }}
+      </div>
+  
+      <hr class="col-3 col-md-2 mb-5">
+
+      <h2 id="advisors">Advisors</h2>
+      <div class="row g-5">
+            {{ range (where .Site.Pages "Section" "advisor") }}
+                {{ range .Pages }}
+                    <div class="col-md-3">
+                        <img class="rounded-circle" width="140" height="140" 
+                          src="/images/{{ .Params.image }}" />
+                        <h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+                    </div>
+                {{ end }}
+            {{ end }}
+      </div>
+ 
+    </main>
+    <footer class="pt-5 my-5 text-muted border-top">
+      Fellowship Web Team &middot; &copy; 2022
+    </footer>
+  </div>
+  
+  
+{{ end }}
